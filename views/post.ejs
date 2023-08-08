@@ -1,0 +1,21 @@
+<%- include("partials/header"); -%>
+
+  <h1>
+    <%=title%>
+  </h1>
+  <p>
+    <%=content%>
+  </p>
+
+  <div class="buttons">
+    <form class="col-4" action="/edit/<%=id%>" method="get">
+      <input hidden type="text" name="postId" value=<%=id%>>
+      <button class="btn btn-success" type="submit" name="button">Edit</button>
+    </form>
+    <form class="col-4" action="/delete" method="post">
+      <input hidden type="text" name="postId" value=<%=id%>>
+      <button class="btn btn-danger" type="submit" name="button">Delete</button>
+    </form>
+  </div>
+
+  <%- include("partials/footer"); -%>
